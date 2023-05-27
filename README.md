@@ -22,3 +22,9 @@ Hi, These are my personal vex snippets which I found handy for most of my Houdin
         @Cd = set(1, 0, 0);
         i@active = 1; 
     }
+    
+ ## Get n unique point groups from n values of a int attrubutes on points
+
+    i@cluster_id = nearpoint(1, @P);    //  cluster_id attr on points
+    setpointgroup(0, sprintf('cluster_%03i', i@cluster_id), @ptnum, 1); 
+   
