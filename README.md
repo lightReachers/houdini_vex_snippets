@@ -30,6 +30,7 @@ Hi, These are my personal vex snippets which I found handy for most of my Houdin
 
  ## Sop Volume vdb Fog with noises
 
-    vector noisel = onoise(@P*0.2,5,0.1,1);
-    @density = anoise(@P*0.5+set(@Time*0,0,0)+noisel*@Time,5,0.5,1);
+    vector n = onoise(@P*.2, 5, .1, 1);
+    float off = anoise(@P*.6+set(@Time*.5,0,0)+n*@Time*.3,5,0.5,1);
+    @density = volumesample(0,0,@P*off)*.2;
    
