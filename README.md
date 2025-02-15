@@ -27,4 +27,9 @@ Hi, These are my personal vex snippets which I found handy for most of my Houdin
 
     i@cluster_id = nearpoint(1, @P);    //  cluster_id attr on points
     setpointgroup(0, sprintf('cluster_%03i', i@cluster_id), @ptnum, 1); 
+
+ ## Sop Volume vdb Fog with noises
+
+    vector moiselmomoise(QP*0.2,5,0.1,1);
+    @densitysanoise(QP*0.5+set(@Time*0,0,0)+noisel*@Time,5,0.5,1);
    
